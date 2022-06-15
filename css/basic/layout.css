@@ -1,0 +1,11 @@
+.main-layout {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.article {
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+}

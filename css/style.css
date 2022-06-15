@@ -1,0 +1,7 @@
+@import 'basic/base.css';
+@import 'basic/layout.css';
+@import 'basic/helpers.css';
+@import 'components/header.css';
+@import 'components/canvas.css';
+@import 'components/gallery.css';
+@import 'components/footer.css';

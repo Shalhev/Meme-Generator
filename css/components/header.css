@@ -1,0 +1,18 @@
+header{
+    background-color: #ff7f00;
+    height: 33px;
+}
+
+header .header-content{
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header .header-content .logo{
+    height: 20px;
+
+}
+.main-nav a {
+    text-decoration: none;
+}

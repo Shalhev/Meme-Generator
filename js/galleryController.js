@@ -1,5 +1,5 @@
 'use strict'
-var gCurrMemeImg;
+var gCurrMemeImg; 
 
 var gImgs = [
     { id: 1, url: 'meme-imgs/1.jpg', keywords: ['funny', 'cat'] },

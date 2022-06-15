@@ -15,8 +15,8 @@
             <a href="index.html"><img class="logo" src="imgs/LOGO.png"></a>
             <nav>
                 <ul class="main-nav flex clean-list">
-                    <li>Gallary</li>
-                    <li>About</li>
+                    <a href="#gallery"><li>Gallary</li></a>
+                    <a href="#about-me"><li>About</li></a>
                 </ul>
             </nav>
         </div>
@@ -27,10 +27,10 @@
                 <canvas id="my-canvas" height="600" width="600"></canvas>
             </div>
             <div class="control-box">
-                <input type="text" placeholder="enter your text" oninput="onInputText(this.value)" />
-                <img src="ICONS/up-and-down-opposite-double-arrows-side-by-side.png">
-                <img src="ICONS/add.png">
-                <img src="ICONS/trash.png">
+                <input name="text-box" type="text" placeholder="Enter your text..." oninput="onInputText(this.value)" />
+                <img onclick="onSwitchLine()" src="ICONS/up-and-down-opposite-double-arrows-side-by-side.png">
+                <img onclick="onAddText()" src="ICONS/add.png">
+                <img onclick="onDeleteLine()" src="ICONS/trash.png">
                 <img onclick="onIncreaseFont()" src="ICONS/increase font - icon.png">
                 <img onclick="onDecreaseFont()" src="ICONS/decrease font - icon.png">
                 <img onclick="onSetTextAlign('end')" src="ICONS/align-to-left.png">
@@ -46,7 +46,7 @@
             </div>
         </div>
 
-        <div class="gallery">
+        <div class="gallery" id="gallery">
             <nav class="search-bar main-layout">
                 <input type="search" placeholder="Enter search keyboard...">
                 <div class="most-search"></div>
@@ -62,9 +62,9 @@
                     <img src="meme-imgs/6.jpg">
                 </div>
             </div>
-            <div class="about-me">
+            <div class="about-me main-layout" id="about-me">
                 <div class="left-side">
-                    <img src="imgs/ShalhevCircle.png1" alt="Shalhev-photo">
+                    <img src="imgs/shalhev.png" alt="Shalhev-photo">
                 </div>
                 <div class="right-side">
                     <h2 class="shalhev">
@@ -75,10 +75,11 @@
                         <p>Sprint 2 - Coding Academy MAY22</p>
                     </div>
                     <div class="social-icons">
-                        linkedin FB GIT
+                        <a href="https://www.linkedin.com/in/shalhev-nagauker/" target="_blank"><img src="ICONS/linkedin-logo.png"></a>
+                        <a href="https://www.facebook.com/shalhev1" target="_blank"><img src="ICONS/facebook-logo.png"></a>
+                        <a href="https://github.com/Shalhev" target="_blank"><img src="ICONS/github-logo.png"></a>
                     </div>
                 </div>
-
             </div>
         </div>
     </main>

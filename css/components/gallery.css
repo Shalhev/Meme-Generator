@@ -15,7 +15,7 @@ main .gallery .gallery-content {
     grid-template-columns: repeat(3, 33.333%);
     gap: 15px;
     justify-content: space-around;
-    padding: 15px ;
+    padding: 15px;
 }
 
 .gallery .gallery-content img {
@@ -24,6 +24,51 @@ main .gallery .gallery-content {
 }
 
 main .gallery .about-me {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 45% 55%;
     background-color: white;
-    text-align: center;
+    /* text-align: left; */
+    padding: 25px 0;
+}
+
+.gallery .about-me .left-side {
+    text-align: right;
+}
+
+.about-me .left-side img {
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    margin-right: 40px;
+}
+
+.gallery .about-me .right-side {
+    text-align: left;
+}
+
+.about-me .right-side p {
+    margin: 0;
+}
+
+.about-me .right-side p:last-of-type {
+    /* margin-top: 0; */
+    margin-bottom: 35px;
+}
+
+.gallery .about-me .social-icons {
+    /* height: 25px;
+    width: 25px; */
+    display: grid;
+    grid-template-columns: repeat(3, 30px);
+    grid-template-rows: 30px;
+    gap: 10px;
+}
+
+.about-me .social-icons img {
+    height: 100%;
+    width: 100%;
+    background-color: #ff7f00;
+    padding: 5px;
+    border-radius: 4px;
 }

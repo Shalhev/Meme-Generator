@@ -20,22 +20,49 @@ function init() {
 
 
 function onInputText(text) {
-    gUserText = text
+    if (!gMeme.lines.length) addNewLine()
+    const idx = gMeme.selectedLineIdx
+    gMeme.lines[idx].txt = text
+
+    renderMeme()
+    // gUserText = text
+}
+
+function onAddText() {
+    addNewLine()
+    renderMeme()
+}
+function onSwitchLine() {
+    switchLine()
+    renderMeme()
+}
+function onDeleteLine() {
+    deleteLine()
     renderMeme()
 }
 
 function onIncreaseFont() {
-    gUserFontSize += 5
+    const idx = gMeme.selectedLineIdx
+    gMeme.lines[idx].size += 5
+
+    // gUserFontSize += 5
     renderMeme()
 }
 function onDecreaseFont() {
-    if (gUserFontSize === 20) return
-    gUserFontSize -= 5
+    const idx = gMeme.selectedLineIdx
+    if (gMeme.lines[idx].size === 20) return
+    gMeme.lines[idx].size -= 5
+
+    // if (gUserFontSize === 20) return
+    // gUserFontSize -= 5
     renderMeme()
 }
 
 function onSetTextAlign(align) {
-    gUserTextAlign = align
+    const idx = gMeme.selectedLineIdx
+    gMeme.lines[idx].align = align
+
+    // gUserTextAlign = align
     renderMeme()
 }
 

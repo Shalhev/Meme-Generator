@@ -1,3 +1,4 @@
+@import 'setup/typography.css';
 @import 'basic/base.css';
 @import 'basic/layout.css';
 @import 'basic/helpers.css';

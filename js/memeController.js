@@ -32,7 +32,7 @@ function renderMeme() {
 
 function drawImgFromlocal() {
     var img = new Image()
-    img.src = '../meme-imgs/1.jpg';
+    img.src = 'meme-imgs/1.jpg';
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height) //img,x,y,xend,yend
     }

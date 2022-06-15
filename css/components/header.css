@@ -1,18 +1,19 @@
-header{
+header {
     background-color: #ff7f00;
-    height: 33px;
+    /* height: 50px; */
 }
 
-header .header-content{
-    height: 35px;
+header .header-content {
+    height: 55px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-header .header-content .logo{
-    height: 20px;
 
+header .header-content .logo {
+    height: 30px;
 }
+
 .main-nav a {
     text-decoration: none;
 }

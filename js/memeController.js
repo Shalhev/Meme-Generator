@@ -12,37 +12,13 @@ var gUserStrokeStyle = 'black'
 var gUserTextAlign = 'center'
 
 function init() {
+    renderGallery()
     gCanvas = document.querySelector('#my-canvas');
     gCtx = gCanvas.getContext('2d');
-    renderMeme()
-}
-
-function renderMeme() {
-    gCtx.fillStyle = 'white';
-    gCtx.strokeStyle = 'black';
-    gCtx.font = gUserFontSize + 'px ' + gUserFontFamily
-    gCtx.textAlign = gUserTextAlign
-    drawImgFromlocal()
-    setTimeout(function () {
-        if (!gUserText) return
-        drawText(gUserText)
-    }, 100)
 
 }
 
-function drawImgFromlocal() {
-    var img = new Image()
-    img.src = 'meme-imgs/1.jpg';
-    img.onload = () => {
-        gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height) //img,x,y,xend,yend
-    }
-}
-function drawText(text, x = gCanvas.width / 2, y = 50) {
-    gCtx.lineWidth = 2;
 
-    gCtx.fillText(text, x, y);//Draws (fills) a given text at the given (x, y) position.
-    gCtx.strokeText(text, x, y);//Draws (strokes) a given text at the given (x, y) position.
-}
 function onInputText(text) {
     gUserText = text
     renderMeme()
@@ -70,4 +46,8 @@ function downloadCanvas(elLink) {
     // to pull information from remote web sites without permission.
     elLink.href = data
     elLink.download = 'my-img.jpg'
+}
+
+function showEditor() {
+    document.querySelector('.meme-editor').style.display = 'grid'
 }

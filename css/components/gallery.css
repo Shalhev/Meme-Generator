@@ -12,15 +12,14 @@ main .gallery .gallery-content {
 
 .gallery .gallery-content .gallery-imgs {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 190px;
+    grid-template-columns: repeat(3, 33.333%);
     gap: 15px;
     justify-content: space-around;
-    padding: 15px 0;
+    padding: 15px ;
 }
 
 .gallery .gallery-content img {
-    height: 100%;
+    width: 100%;
     margin: 0 auto;
 }
 

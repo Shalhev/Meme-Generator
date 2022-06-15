@@ -1,23 +1,24 @@
-
-main .meme-editor{
-    display: grid;
+main .meme-editor {
+    display: none;
     grid-template-columns: 1fr 1fr;
     outline: 1px solid red;
 }
-canvas{
-    /* display: block; */
-    margin: 0 auto;
+
+canvas {
     outline: 1px solid black;
     background-color: white;
 }
-.meme-editor .control-box{
+
+.meme-editor .control-box {
     text-align: center;
 }
-.meme-editor .control-box input{
+
+.meme-editor .control-box input {
     display: block;
     margin: 0 auto;
 }
-.meme-editor .control-box img{
+
+.meme-editor .control-box img {
     width: 30px;
     height: 30px;
     cursor: pointer;

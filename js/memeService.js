@@ -24,7 +24,7 @@ function renderMeme() {
         // if (!gUserText) return
         gMeme.lines.forEach(line => setLineTxt(line.txt))
         // setLineTxt(gUserText)
-        
+
     }
 }
 
@@ -75,6 +75,12 @@ function switchLine() {
         gMeme.selectedLineIdx = 0
     }
     updateTextInput()
+}
+
+function setFont(font) {
+    const idx = gMeme.selectedLineIdx
+    const line = gMeme.lines[idx]
+    line.font = font
 }
 
 function updateTextInput() {

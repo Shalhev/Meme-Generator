@@ -32,6 +32,7 @@ function onAddText() {
     addNewLine()
     renderMeme()
 }
+
 function onSwitchLine() {
     switchLine()
     renderMeme()
@@ -63,6 +64,10 @@ function onSetTextAlign(align) {
     gMeme.lines[idx].align = align
 
     // gUserTextAlign = align
+    renderMeme()
+}
+function onSetFont(font) {
+    setFont(font)
     renderMeme()
 }
 

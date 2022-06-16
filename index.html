@@ -15,8 +15,12 @@
             <a href="index.html"><img class="logo" src="imgs/LOGO.png"></a>
             <nav>
                 <ul class="main-nav flex clean-list">
-                    <a href="#gallery"><li>Gallary</li></a>
-                    <a href="#about-me"><li>About</li></a>
+                    <a href="index.html">
+                        <li>Gallary</li>
+                    </a>
+                    <a href="#about-me">
+                        <li>About</li>
+                    </a>
                 </ul>
             </nav>
         </div>
@@ -27,28 +31,51 @@
                 <canvas id="my-canvas" height="600" width="600"></canvas>
             </div>
             <div class="control-box">
-                <input name="text-box" type="text" placeholder="Enter your text..." oninput="onInputText(this.value)" />
-                <img onclick="onSwitchLine()" src="ICONS/up-and-down-opposite-double-arrows-side-by-side.png">
-                <img onclick="onAddText()" src="ICONS/add.png">
-                <img onclick="onDeleteLine()" src="ICONS/trash.png">
-                <img onclick="onIncreaseFont()" src="ICONS/increase font - icon.png">
-                <img onclick="onDecreaseFont()" src="ICONS/decrease font - icon.png">
-                <img onclick="onSetTextAlign('end')" src="ICONS/align-to-left.png">
-                <img onclick="onSetTextAlign('center')" src="ICONS/center-text-alignment.png">
-                <img onclick="onSetTextAlign('start')" src="ICONS/align-to-right.png">
-                <select class="font-name" onchange="onSetFont(this.value)">
-                    <option>Impact</option>
-                    <option>Ariel</option>
-                </select>
-                <img src="ICONS/text stroke.png">
-                <img src="ICONS/paint-board-and-brush.png">
+                <div class="top-grid">
+                    <input class="text-box" name="text-box" type="text" placeholder="Enter your text..."
+                        oninput="onInputText(this.value)" />
+                        <div class="up-down-line-btns">
+                            <span onclick="onMoveLineDown()" class="down-btn">↓</span>
+                            <span onclick="onMoveLineUp()" class="up-btn">↑</span>
+                        </div>
+                    <img class="btn switch-line-btn" onclick="onSwitchLine()"
+                        src="ICONS/up-and-down-opposite-double-arrows-side-by-side.png">
+                    <img class="btn add-line-btn" onclick="onAddText()" src="ICONS/add.png">
+                    <img class="btn delete-line-btn" onclick="onDeleteLine()" src="ICONS/trash.png">
+                </div>
+                <div class="mid-grid">
+                    <img class="btn increase-font-btn" onclick="onIncreaseFont()" src="ICONS/increase font - icon.png">
+                    <img class="btn decrease-font-btn" onclick="onDecreaseFont()" src="ICONS/decrease font - icon.png">
+                    <img class="btn align-left-btn" onclick="onSetTextAlign('end')" src="ICONS/align-to-left.png">
+                    <img class="btn align-center-btn" onclick="onSetTextAlign('center')"
+                        src="ICONS/center-text-alignment.png">
+                    <img class="btn align-right-btn" onclick="onSetTextAlign('start')" src="ICONS/align-to-right.png">
+                    <select class="btn font-name" onchange="onSetFont(this.value)">
+                        <option>Impact</option>
+                        <option>Ariel</option>
+                    </select>
+                    <img onclick="onSetLineWidth()" class="btn text-stroke-btn" src="ICONS/text stroke.png">
+                    <img class="btn text-color-btn" src="ICONS/paint-board-and-brush.png">
+                </div>
+                <div class="share-grid">
+                    <button class="share-btn">Share</button>
+                </div>
                 <a href="#" onclick="downloadCanvas(this)" download="">Download</a>
+                <input type="color" class="input-color">
             </div>
         </div>
 
         <div class="gallery" id="gallery">
             <nav class="search-bar main-layout">
-                <input type="search" placeholder="Enter search keyboard...">
+                <div class="input-container">
+                    <input oninput="onSearch(this.value)" type="text" list="search-list" placeholder="Enter search keyboard...">
+                    <datalist id="search-list">
+                        <option value="Funny">
+                        <option value="Cat">
+                        <option value="Dog">
+                        <option value="Trump">
+                        <option value="Baby">
+                </div>
                 <div class="most-search"></div>
             </nav>
 
@@ -75,8 +102,10 @@
                         <p>Sprint 2 - Coding Academy MAY22</p>
                     </div>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/shalhev-nagauker/" target="_blank"><img src="ICONS/linkedin-logo.png"></a>
-                        <a href="https://www.facebook.com/shalhev1" target="_blank"><img src="ICONS/facebook-logo.png"></a>
+                        <a href="https://www.linkedin.com/in/shalhev-nagauker/" target="_blank"><img
+                                src="ICONS/linkedin-logo.png"></a>
+                        <a href="https://www.facebook.com/shalhev1" target="_blank"><img
+                                src="ICONS/facebook-logo.png"></a>
                         <a href="https://github.com/Shalhev" target="_blank"><img src="ICONS/github-logo.png"></a>
                     </div>
                 </div>

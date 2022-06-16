@@ -43,31 +43,32 @@ function onDeleteLine() {
 }
 
 function onIncreaseFont() {
-    const idx = gMeme.selectedLineIdx
-    gMeme.lines[idx].size += 5
-
-    // gUserFontSize += 5
+    increaseFont()
     renderMeme()
 }
 function onDecreaseFont() {
-    const idx = gMeme.selectedLineIdx
-    if (gMeme.lines[idx].size === 20) return
-    gMeme.lines[idx].size -= 5
-
-    // if (gUserFontSize === 20) return
-    // gUserFontSize -= 5
+    decreaseFont()
     renderMeme()
 }
 
 function onSetTextAlign(align) {
-    const idx = gMeme.selectedLineIdx
-    gMeme.lines[idx].align = align
-
-    // gUserTextAlign = align
+    setTextAlign(align)
     renderMeme()
 }
 function onSetFont(font) {
     setFont(font)
+    renderMeme()
+}
+function onSetLineWidth(){
+    setLineWidth()
+    renderMeme()
+}
+function onMoveLineDown(){
+    moveLineDown()
+    renderMeme()
+}
+function onMoveLineUp(){
+    moveLineUp()
     renderMeme()
 }
 

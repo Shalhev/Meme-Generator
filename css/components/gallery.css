@@ -3,7 +3,37 @@ main .gallery {
 }
 
 main .gallery .search-bar {
-    padding: 25px;
+    padding: 25px 0;
+}
+
+.gallery .search-bar .input-container {
+    /* display: grid;
+    grid-template-columns: 80% 20%; */
+    /* background-image: url('../../ICONS/search-icon.png');
+    background-repeat: no-repeat;
+    padding-left: 20px; */
+}
+
+.gallery .search-bar input {
+    background-image: url('../../ICONS/search-icon.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 20px;
+    padding-right: 20px;
+    font-size: 16px;
+    font-family: Montserrat;
+    font-weight: 700;
+    border: 0;
+    border-bottom: 2px solid black;
+    user-select: none;
+}
+.gallery .search-bar input:focus{
+    outline: none;
+}
+
+.search-bar .input-container img {
+    /* height: 100%; */
+    /* width: 100%; */
 }
 
 main .gallery .gallery-content {

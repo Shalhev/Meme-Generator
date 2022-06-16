@@ -1,11 +1,15 @@
+main {
+    background-color: #e3e3e3;
+}
+
 main .meme-editor {
     display: none;
     grid-template-columns: 1fr 1fr;
-    outline: 1px solid red;
+    margin: 25px auto;
 }
 
 canvas {
-    outline: 1px solid black;
+    /* outline: 1px solid black; */
     background-color: white;
 }
 
@@ -13,13 +17,187 @@ canvas {
     text-align: center;
 }
 
-.meme-editor .control-box input {
-    display: block;
-    margin: 0 auto;
-}
+
 
 .meme-editor .control-box img {
-    width: 30px;
-    height: 30px;
+    /* width: 30px; */
+    /* height: 30px; */
+    cursor: pointer;
+}
+
+.meme-editor .control-box .btn {
+    padding: 10px;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+
+/* TOP GRID */
+.meme-editor .control-box .top-grid {
+    display: grid;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    justify-content: center;
+    align-items: center;
+    column-gap: 15px;
+    row-gap: 10px;
+    grid-template-columns: repeat(5, 50px);
+    grid-template-rows: repeat(2, 50px);
+    grid-template-areas:
+        "txt-box txt-box txt-box txt-box txt-box"
+        "up-down-line switch-line add-line delete-line .";
+}
+
+.meme-editor .control-box .text-box {
+    display: block;
+    /* margin: 0 auto; */
+    padding: 10px 15px;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    font-family: Montserrat;
+    font-weight: 700;
+    border-radius: 8px;
+    border: 0px;
+    grid-area: txt-box;
+}
+.meme-editor .control-box .text-box:focus{
+    outline: none;
+}
+
+.meme-editor .control-box .up-down-line-btns {
+    grid-area: up-down-line;
+    justify-self: center;
+    font-family: fantasy;
+    font-weight: 700;
+    /* height: 100%; */
+    /* width: 100%; */
+    font-size: 32px;
+    line-height: 0;
+
+
+}
+
+.control-box .up-down-line-btns .up-btn {
+    color: rgb(7, 210, 7);
+    border-radius: 4px;
+    background-color: white;
+    height: 100%;
+    width: 50%;
+    padding-bottom: 7px;
+    cursor: pointer;
+    user-select: none;
+
+}
+
+.control-box .up-down-line-btns .down-btn {
+    color: red;
+    border-radius: 4px;
+    background-color: white;
+    width: 50%;
+    padding-bottom: 7px;
+    cursor: pointer;
+    user-select: none;
+
+}
+
+
+.meme-editor .control-box .switch-line-btn {
+    grid-area: switch-line;
+    justify-self: center;
+}
+
+.meme-editor .control-box .add-line-btn {
+    grid-area: add-line;
+    justify-self: center;
+}
+
+.meme-editor .control-box .delete-line-btn {
+    grid-area: delete-line;
+    justify-self: center;
+}
+
+/* MID GRID */
+.meme-editor .control-box .mid-grid {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    column-gap: 15px;
+    row-gap: 10px;
+    grid-template-columns: repeat(5, 50px);
+    grid-template-rows: repeat(2, 50px);
+    grid-template-areas:
+        "increase-font decrease-font align-left align-center align-right"
+        "font-name font-name font-name text-stroke text-color";
+}
+
+.meme-editor .control-box .increase-font-btn {
+    grid-area: increase-font;
+    justify-self: center;
+}
+
+.meme-editor .control-box .decrease-font-btn {
+    grid-area: decrease-font;
+    justify-self: center;
+}
+
+.meme-editor .control-box .align-left-btn {
+    grid-area: align-left;
+    justify-self: center;
+}
+
+.meme-editor .control-box .align-center-btn {
+    grid-area: align-center;
+    justify-self: center;
+}
+
+.meme-editor .control-box .align-right-btn {
+    grid-area: align-right;
+    justify-self: center;
+}
+
+.meme-editor .control-box .font-name {
+    grid-area: font-name;
+    justify-self: center;
+    width: 100%;
+    height: 100%;
+}
+
+.meme-editor .control-box .text-stroke-btn {
+    grid-area: text-stroke;
+    justify-self: center;
+}
+
+.meme-editor .control-box .text-color-btn {
+    grid-area: text-color;
+    justify-self: center;
+}
+
+/* BOTTOM GRID */
+.meme-editor .control-box .share-grid {
+    margin: 0 auto;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    column-gap: 15px;
+    grid-template-columns: repeat(5, 50px);
+    grid-template-rows: 50px;
+    grid-template-areas: ". . . share-btn share-btn";
+}
+
+.meme-editor .control-box .share-btn {
+    grid-area: share-btn;
+    justify-self: center;
+    width: 100%;
+    height: 100%;
+    font-family: Montserrat;
+    background-color: #ff7f00;
+    border: 0px;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
     cursor: pointer;
 }

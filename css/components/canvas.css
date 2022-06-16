@@ -189,7 +189,52 @@ canvas {
     cursor: pointer;
 }
 
-/* BOTTOM GRID */
+/* Stickers Container */
+.meme-editor .control-box .stickers-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5px;
+    row-gap: 10px;
+    grid-template-columns: 25px repeat(3, 80px) 25px;
+    grid-template-rows: repeat(2, 50px);
+    /* background-color: white; */
+    margin: 0 auto;
+    margin-bottom: 20px;
+    grid-template-areas: "left-arrow sticker1 sticker2 sticker3 right-arrow"
+    "left-arrow sticker1 sticker2 sticker3 right-arrow";
+    user-select: none;
+}
+
+.control-box .stickers-container .left-arrow {
+    grid-area: left-arrow;
+    justify-self: center;
+}
+.control-box .stickers-container .right-arrow {
+    grid-area: right-arrow;
+    justify-self: center;
+}
+.control-box .stickers-container .sticker1 {
+    grid-area: sticker1;
+    justify-self: center;
+}
+
+.control-box .stickers-container .sticker2 {
+    grid-area: sticker2;
+    justify-self: center;
+}
+.control-box .stickers-container .sticker3 {
+    grid-area: sticker3;
+    justify-self: center;
+}
+
+.control-box .stickers-container .sticker {
+    /* height: 100%; */
+    /* width: 100%; */
+    font-size: 50px;
+}
+
+/* Share button */
 .meme-editor .control-box .share-grid {
     margin: 0 auto;
     display: grid;

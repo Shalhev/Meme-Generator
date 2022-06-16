@@ -55,13 +55,15 @@
                         <option>Ariel</option>
                     </select>
                     <img onclick="onSetLineWidth()" class="btn text-stroke-btn" src="ICONS/text stroke.png">
-                    <img class="btn text-color-btn" src="ICONS/paint-board-and-brush.png">
+                    <div class="btn text-color-btn">
+                        <img src="ICONS/paint-board-and-brush.png">
+                        <input oninput="onSetColor(this.value)" type="color" class="input-color">
+                    </div>
                 </div>
                 <div class="share-grid">
                     <button class="share-btn">Share</button>
                 </div>
                 <a href="#" onclick="downloadCanvas(this)" download="">Download</a>
-                <input type="color" class="input-color">
             </div>
         </div>
 

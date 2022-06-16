@@ -4,12 +4,12 @@ var gCtx;
 
 
 // Settings:
-var gUserText;
-var gUserFontSize = 40
-var gUserFontFamily = 'Impact'
-var gUserFillStyle = 'white'
-var gUserStrokeStyle = 'black'
-var gUserTextAlign = 'center'
+// var gUserText;
+// var gUserFontSize = 40
+// var gUserFontFamily = 'Impact'
+// var gUserFillStyle = 'white'
+// var gUserStrokeStyle = 'black'
+// var gUserTextAlign = 'center'
 
 function init() {
     renderGallery()
@@ -17,7 +17,6 @@ function init() {
     gCtx = gCanvas.getContext('2d');
 
 }
-
 
 function onInputText(text) {
     if (!gMeme.lines.length) addNewLine()
@@ -37,6 +36,7 @@ function onSwitchLine() {
     switchLine()
     renderMeme()
 }
+
 function onDeleteLine() {
     deleteLine()
     renderMeme()
@@ -46,6 +46,7 @@ function onIncreaseFont() {
     increaseFont()
     renderMeme()
 }
+
 function onDecreaseFont() {
     decreaseFont()
     renderMeme()
@@ -55,19 +56,28 @@ function onSetTextAlign(align) {
     setTextAlign(align)
     renderMeme()
 }
+
 function onSetFont(font) {
     setFont(font)
     renderMeme()
 }
-function onSetLineWidth(){
+
+function onSetColor(color) {
+    setColor(color)
+    renderMeme()
+}
+
+function onSetLineWidth() {
     setLineWidth()
     renderMeme()
 }
-function onMoveLineDown(){
+
+function onMoveLineDown() {
     moveLineDown()
     renderMeme()
 }
-function onMoveLineUp(){
+
+function onMoveLineUp() {
     moveLineUp()
     renderMeme()
 }

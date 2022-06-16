@@ -27,6 +27,7 @@ main .gallery .search-bar {
     border-bottom: 2px solid black;
     user-select: none;
 }
+
 .gallery .search-bar input:focus{
     outline: none;
 }

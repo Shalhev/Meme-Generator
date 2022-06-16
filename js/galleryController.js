@@ -23,8 +23,6 @@ var gImgs = [
     { id: 18, url: 'meme-imgs/18.jpg', keywords: ['funny', 'cat'] },
 ];
 
-
-
 function renderGallery() {
     var imgs = gImgs
     if (gFilterBy) imgs = imgs.filter(img => img.keywords.includes(gFilterBy))
@@ -47,6 +45,7 @@ function onSearch(text) {
     gFilterBy = text.toLowerCase()
     renderGallery()
 }
+
 function hideGallery() {
     document.querySelector('.gallery').style.display = 'none'
 }

@@ -19,7 +19,6 @@ var gMeme = {
 
 var gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
 
-
 function renderMeme() {
     updateTextInput()
 
@@ -35,8 +34,6 @@ function renderMeme() {
 
     }
 }
-
-
 
 function setLineTxt(text, x = gCanvas.width / 2, y = 50) {
     const idx = gMeme.lines.findIndex(line => line.txt === text)
@@ -74,6 +71,7 @@ function addNewLine() {
     updateTextInput()
 
 }
+
 function deleteLine() {
     const lines = gMeme.lines
     if (!lines.length) return
@@ -108,6 +106,7 @@ function updateTextInput() {
     if(line.txt === 'Text') document.querySelector('[name=text-box]').select()
     
 }
+
 function increaseFont(){
     const idx = gMeme.selectedLineIdx
     const line = gMeme.lines[idx]
@@ -132,6 +131,13 @@ function setTextAlign(align){
 
 }
 
+function setColor(color){
+    const idx = gMeme.selectedLineIdx
+    const line = gMeme.lines[idx]
+    if (!line) return
+    line.color = color
+}
+
 function setLineWidth() {
     const idx = gMeme.selectedLineIdx
     const line = gMeme.lines[idx]
@@ -142,12 +148,14 @@ function setLineWidth() {
         line.lineWidth = 1
     }
 }
+
 function moveLineDown() {
     const idx = gMeme.selectedLineIdx
     const line = gMeme.lines[idx]
     if (!line) return
     line.y += 5
 }
+
 function moveLineUp() {
     const idx = gMeme.selectedLineIdx
     const line = gMeme.lines[idx]

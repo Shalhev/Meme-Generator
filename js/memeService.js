@@ -41,12 +41,8 @@ function renderMeme() {
     var img = new Image()
     img.src = meme.url;
     img.onload = () => {
-        gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height) //img,x,y,xend,yend
-
-        // if (!gUserText) return
+        gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
         gMeme.lines.forEach(line => setLineTxt(line.txt, line.x, line.y))
-        // setLineTxt(gUserText)
-
     }
 }
 
@@ -56,12 +52,11 @@ function setLineTxt(text, x = gCanvas.width / 2, y = 50) {
 
 
     gCtx.fillStyle = line.color
-    // gCtx.strokeStyle = gUserStrokeStyle
     gCtx.font = line.size + 'px ' + line.font
     gCtx.textAlign = line.align
     gCtx.lineWidth = line.lineWidth;
-    gCtx.fillText(text, x, y);//Draws (fills) a given text at the given (x, y) position.
-    gCtx.strokeText(text, x, y);//Draws (strokes) a given text at the given (x, y) position.
+    gCtx.fillText(text, x, y);
+    gCtx.strokeText(text, x, y);
 }
 
 function addNewLine(text = 'Text') {
@@ -82,8 +77,6 @@ function addNewLine(text = 'Text') {
     gMeme.lines.push(line)
     updateTextInput()
 }
-
-
 
 function deleteLine() {
     const lines = gMeme.lines
@@ -199,6 +192,7 @@ function getRandomInt(max) {
 function renderFirstLinePos() {
     gMeme.lines[0].x = gCanvas.width / 2
 }
+
 function resizeCanvas() {
     const elEditor = document.querySelector('.canvas-container')
     gCanvas.width = elEditor.offsetWidth

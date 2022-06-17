@@ -9,20 +9,12 @@ main .meme-editor {
     grid-template-areas: "canvas control-box";
     margin: 25px auto;
 }
-.meme-editor .control-box .canvas-container{
-    /* margin: 0 auto; */
-}
 
 canvas {
-    /* outline: 1px solid black; */
     grid-area: canvas;
     background-color: white;
     width: 100%;
     height: 100%;
-    /* padding-left: 0;
-    padding-right: 0;
-    margin-left: auto;
-    margin-right: auto; */
     display: block;
 
 }
@@ -33,8 +25,6 @@ canvas {
 }
 
 .meme-editor .control-box img {
-    /* width: 30px; */
-    /* height: 30px; */
     cursor: pointer;
 }
 
@@ -64,7 +54,6 @@ canvas {
 
 .meme-editor .control-box .text-box {
     display: block;
-    /* margin: 0 auto; */
     padding: 10px 15px;
     width: 100%;
     height: 100%;
@@ -85,8 +74,6 @@ canvas {
     justify-self: center;
     font-family: fantasy;
     font-weight: 700;
-    /* height: 100%; */
-    /* width: 100%; */
     font-size: 32px;
     line-height: 0;
 
@@ -213,7 +200,6 @@ canvas {
     row-gap: 10px;
     grid-template-columns: 25px repeat(3, 80px) 25px;
     grid-template-rows: repeat(2, 20px);
-    /* background-color: white; */
     margin: 0 auto;
     margin-bottom: 20px;
     grid-template-areas: "left-arrow sticker1 sticker2 sticker3 right-arrow"
@@ -247,8 +233,6 @@ canvas {
 }
 
 .control-box .stickers-container .sticker {
-    /* height: 100%; */
-    /* width: 100%; */
     font-size: 50px;
 }
 

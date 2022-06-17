@@ -47,7 +47,6 @@ main .gallery .about-me {
     align-items: center;
     grid-template-columns: 45% 55%;
     background-color: white;
-    /* text-align: left; */
     padding: 25px 0;
 }
 
@@ -71,13 +70,11 @@ main .gallery .about-me {
 }
 
 .about-me .right-side p:last-of-type {
-    /* margin-top: 0; */
     margin-bottom: 35px;
 }
 
 .gallery .about-me .social-icons {
-    /* height: 25px;
-    width: 25px; */
+
     display: grid;
     grid-template-columns: repeat(3, 30px);
     grid-template-rows: 30px;

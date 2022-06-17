@@ -21,7 +21,6 @@ function onInputText(text) {
     gMeme.lines[idx].txt = text
 
     renderMeme()
-    // gUserText = text
 }
 
 function onAddText() {
@@ -80,10 +79,7 @@ function onMoveLineUp() {
 }
 
 function downloadCanvas(elLink) {
-    //protect the image soo attacker could not download imgs from diff domain
-    const data = gCanvas.toDataURL()// for security reason you can`t do toDataUrl on tainted canvas
-    //This protects users from having private data exposed by using images
-    // to pull information from remote web sites without permission.
+    const data = gCanvas.toDataURL()
     elLink.href = data
     elLink.download = 'my-img.jpg'
 }

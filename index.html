@@ -62,15 +62,17 @@
                 </div>
                 <div class="stickers-container">
                     <span class="sticker left-arrow">❮</span>
-                    <span class="sticker sticker1">🕶</span>
-                    <span class="sticker sticker2">🎓</span>
-                    <span class="sticker sticker3">🚬</span>
+                    <span class="sticker sticker1" onclick="onAddSticker(this.innerText)">🕶</span>
+                    <span class="sticker sticker2" onclick="onAddSticker(this.innerText)">🎓</span>
+                    <span class="sticker sticker3" onclick="onAddSticker(this.innerText)">🚬</span>
                     <span class="sticker right-arrow">❯</span>
                 </div>
-                <div class="share-grid">
+                <div class="btns-grid">
                     <button class="share-btn">Share</button>
+                    <a class="download-btn" href="#" onclick="downloadCanvas(this)" download="">
+                        Download
+                    </a>
                 </div>
-                <a href="#" onclick="downloadCanvas(this)" download="">Download</a>
             </div>
         </div>
 
@@ -81,10 +83,12 @@
                         placeholder="Enter search keyboard...">
                     <datalist id="search-list">
                         <option value="Funny">
+                        <option value="Baby">
                         <option value="Cat">
                         <option value="Dog">
                         <option value="Trump">
-                        <option value="Baby">
+                        <option value="Obama">
+                        <option value="Putin">
                 </div>
                 <div class="most-search"></div>
             </nav>

@@ -2,19 +2,16 @@
 var gCanvas;
 var gCtx;
 
-
-// Settings:
-// var gUserText;
-// var gUserFontSize = 40
-// var gUserFontFamily = 'Impact'
-// var gUserFillStyle = 'white'
-// var gUserStrokeStyle = 'black'
-// var gUserTextAlign = 'center'
-
 function init() {
     renderGallery()
     gCanvas = document.querySelector('#my-canvas');
     gCtx = gCanvas.getContext('2d');
+    resizeCanvas()
+
+    window.addEventListener('resize', () => {
+        resizeCanvas()
+        renderMeme()
+    })
 
 }
 
@@ -93,4 +90,9 @@ function downloadCanvas(elLink) {
 
 function showEditor() {
     document.querySelector('.meme-editor').style.display = 'grid'
+}
+
+function onAddSticker(sticker){
+    addNewLine(sticker)
+    renderMeme()
 }

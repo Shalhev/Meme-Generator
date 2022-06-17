@@ -1,19 +1,34 @@
 'use strict'
+const gMemesSentences = [
+    'I never eat falafel',
+    'DOMS DOMS EVERYWHERE',
+    'Stop Using i in for loops',
+    'Armed in knowledge',
+    'Js error "Unexpected String"',
+    'One does not simply write js',
+    'I`m a simple man i see vanilla JS, i click like!',
+    'JS, HTML,CSS?? Even my momma can do that',
+    'May the force be with you',
+    'I know JS',
+    'JS Where everything is made up and the rules dont matter',
+    'Not sure if im good at programming or good at googling',
+    'But if we could',
+    'JS what is this?',
+    'Write hello world , add to cv 7 years experienced',
+];
 
 var gMeme = {
     selectedImgId: 5,
     selectedLineIdx: 0,
     lines: [{
-        txt: 'I sometimes eat Falafel',
-        size: 50,
+        txt: getRandomSent(),
+        size: 25,
         align: 'center',
         color: 'white',
         font: 'Impact',
         lineWidth: 1,
         x: 300,
-        y: 50
-
-
+        y: 60
     }]
 }
 
@@ -21,15 +36,15 @@ var gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
 
 function renderMeme() {
     updateTextInput()
-
+    const meme = getMeme()
     // Draw IMG
     var img = new Image()
-    img.src = gCurrMemeImg.url;
+    img.src = meme.url;
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height) //img,x,y,xend,yend
 
         // if (!gUserText) return
-        gMeme.lines.forEach(line => setLineTxt(line.txt,line.x, line.y))
+        gMeme.lines.forEach(line => setLineTxt(line.txt, line.x, line.y))
         // setLineTxt(gUserText)
 
     }
@@ -38,9 +53,7 @@ function renderMeme() {
 function setLineTxt(text, x = gCanvas.width / 2, y = 50) {
     const idx = gMeme.lines.findIndex(line => line.txt === text)
     const line = gMeme.lines[idx]
-    // if (idx === 0) y = 60
-    // else if (idx === 1) y = 550
-    // else if (idx > 1) y = 300
+
 
     gCtx.fillStyle = line.color
     // gCtx.strokeStyle = gUserStrokeStyle
@@ -51,9 +64,9 @@ function setLineTxt(text, x = gCanvas.width / 2, y = 50) {
     gCtx.strokeText(text, x, y);//Draws (strokes) a given text at the given (x, y) position.
 }
 
-function addNewLine() {
+function addNewLine(text = 'Text') {
     const line = {
-        txt: 'Text',
+        txt: text,
         size: 50,
         align: 'center',
         color: 'white',
@@ -63,14 +76,14 @@ function addNewLine() {
         y: 50
     }
     gMeme.selectedLineIdx++
-    const idx = gMeme.selectedLineIdx
-    if (idx === 0) line.y = 60
-    else if (idx === 1) line.y = 550
-    else if (idx > 1) line.y = 300
+    if (gMeme.lines.length === 0) line.y = 60
+    else if (gMeme.lines.length === 1) line.y = gCanvas.height - 20
+    else if (gMeme.lines.length >= 2) line.y = gCanvas.height / 2
     gMeme.lines.push(line)
     updateTextInput()
-
 }
+
+
 
 function deleteLine() {
     const lines = gMeme.lines
@@ -103,11 +116,11 @@ function updateTextInput() {
     const line = gMeme.lines[idx]
     if (!line) return document.querySelector('[name=text-box]').value = ''
     document.querySelector('[name=text-box]').value = line.txt
-    if(line.txt === 'Text') document.querySelector('[name=text-box]').select()
-    
+    if (line.txt === 'Text') document.querySelector('[name=text-box]').select()
+
 }
 
-function increaseFont(){
+function increaseFont() {
     const idx = gMeme.selectedLineIdx
     const line = gMeme.lines[idx]
     if (!line) return
@@ -115,15 +128,15 @@ function increaseFont(){
 
 }
 
-function decreaseFont(){
+function decreaseFont() {
     const idx = gMeme.selectedLineIdx
     const line = gMeme.lines[idx]
     if (!line) return
-    if (gMeme.lines[idx].size === 20) return
+    if (gMeme.lines[idx].size === 15) return
     gMeme.lines[idx].size -= 5
 }
 
-function setTextAlign(align){
+function setTextAlign(align) {
     const idx = gMeme.selectedLineIdx
     const line = gMeme.lines[idx]
     if (!line) return
@@ -131,7 +144,7 @@ function setTextAlign(align){
 
 }
 
-function setColor(color){
+function setColor(color) {
     const idx = gMeme.selectedLineIdx
     const line = gMeme.lines[idx]
     if (!line) return
@@ -170,4 +183,24 @@ function openModal() {
 function getMeme() {
     const idx = gImgs.findIndex(img => img.id === gMeme.selectedImgId)
     const meme = gImgs[idx]
+    return meme
+}
+
+function getRandomSent() {
+    const randomNum = getRandomInt(gMemesSentences.length)
+    const memeSentence = gMemesSentences[randomNum]
+    return memeSentence
+}
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+
+function renderFirstLinePos() {
+    gMeme.lines[0].x = gCanvas.width / 2
+}
+function resizeCanvas() {
+    const elEditor = document.querySelector('.canvas-container')
+    gCanvas.width = elEditor.offsetWidth
+    gCanvas.height = elEditor.offsetWidth
 }

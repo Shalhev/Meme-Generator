@@ -4,7 +4,7 @@ main {
 
 main .meme-editor {
     display: none;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(400px, 1fr) minmax(400px, 1fr);
     grid-template-rows: 100%;
     grid-template-areas: "canvas control-box";
     margin: 25px auto;

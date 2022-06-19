@@ -4,6 +4,13 @@ main .gallery {
 
 main .gallery .search-bar {
     padding: 25px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.gallery .search-bar .input-container {
+    display: flex;
 }
 
 .gallery .search-bar input {
@@ -21,9 +28,36 @@ main .gallery .search-bar {
     user-select: none;
 }
 
-.gallery .search-bar input:focus{
+.gallery .search-bar input:focus {
     outline: none;
 }
+
+.gallery .search-bar .flexible-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: download-btn;
+    justify-self: center;
+    font-family: Montserrat;
+    background-color: #ff7f00;
+    border: 0px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+}
+
+.search-bar .most-search ul{
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.search-bar .most-search li {
+    padding: 0 10px;
+    align-items: flex-end;
+}
+
 
 main .gallery .gallery-content {
     background-color: #e3e3e3;

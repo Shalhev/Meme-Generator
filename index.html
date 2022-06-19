@@ -90,7 +90,17 @@
                         <option value="Obama">
                         <option value="Putin">
                 </div>
-                <div class="most-search"></div>
+                <button class="flexible-btn" onclick="onRandomMeme()">I'm Flexible</button>
+                <div class="most-search">
+                    <ul class="suggestions clean-list flex">
+                        <li id="funny" onclick="onSuggestionClick(this.id)">Funny</li>
+                        <li id="baby" onclick="onSuggestionClick(this.id)">Baby</li>
+                        <li id="politics" onclick="onSuggestionClick(this.id)">Politics</li>
+                        <li id="cat" onclick="onSuggestionClick(this.id)">Cat</li>
+                        <li id="dog" onclick="onSuggestionClick(this.id)">Dog</li>
+                        <li id="trump" onclick="onSuggestionClick(this.id)">Trump</li>
+                    </ul>
+                </div>
             </nav>
 
             <div class="gallery-content">

@@ -32,7 +32,7 @@ var gMeme = {
     }]
 }
 
-var gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
+var gDraggedLine;
 
 function renderMeme() {
     updateTextInput()
@@ -169,10 +169,6 @@ function moveLineUp() {
     line.y -= 5
 }
 
-function openModal() {
-
-}
-
 function getMeme() {
     const idx = gImgs.findIndex(img => img.id === gMeme.selectedImgId)
     const meme = gImgs[idx]
@@ -197,4 +193,59 @@ function resizeCanvas() {
     const elEditor = document.querySelector('.canvas-container')
     gCanvas.width = elEditor.offsetWidth
     gCanvas.height = elEditor.offsetWidth
+}
+
+//DRAG & DROP LINES
+const gTouchEvs = ['touchstart', 'touchmove', 'touchend']
+
+function down(ev) {
+    const clickPos = getEvPos(ev)
+    const clickedLine = getLineFromPos(clickPos)
+    if (clickedLine) {
+        document.body.style.cursor = 'grab'
+        gDraggedLine = clickedLine
+        gMeme.selectedLineIdx = gMeme.lines.findIndex(line => line === clickedLine)
+        updateTextInput()
+
+    }
+
+}
+
+function getLineFromPos(pos) {
+    return gMeme.lines.find(line =>
+        line.y + 5 > pos.y && line.y - line.size - 5 < pos.y)
+}
+
+function up() {
+    document.body.style.cursor = 'auto'
+    gDraggedLine = ''
+}
+
+function getEvPos(ev) {
+    var pos = {
+        x: ev.offsetX,
+        y: ev.offsetY
+    }
+    if (gTouchEvs.includes(ev.type)) {
+        ev.preventDefault()
+        ev = ev.changedTouches[0]
+        pos = {
+            x: ev.pageX - ev.target.offsetLeft - ev.target.clientLeft,
+            y: ev.pageY - ev.target.offsetTop - ev.target.clientTop
+        }
+    }
+    return pos
+}
+
+function dragLine(ev) {
+    if (!gDraggedLine) return;
+    const pos = getEvPos(ev)
+    gDraggedLine.y = pos.y
+    gDraggedLine.x = pos.x
+    renderMeme()
+}
+
+function randomMeme(){
+    const num = getRandomInt(gImgs.length)
+    onSelectMeme(num)
 }

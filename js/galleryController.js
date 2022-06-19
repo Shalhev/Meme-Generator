@@ -1,7 +1,7 @@
 'use strict'
 
 var gImgs = [
-    { id: 1, url: 'meme-imgs/1.jpg', keywords: ['trump', 'usa'] },
+    { id: 1, url: 'meme-imgs/1.jpg', keywords: ['trump', 'usa', 'politics'] },
     { id: 2, url: 'meme-imgs/2.jpg', keywords: ['funny', 'dog', 'dogs'] },
     { id: 3, url: 'meme-imgs/3.jpg', keywords: ['funny', 'dog', 'baby'] },
     { id: 4, url: 'meme-imgs/4.jpg', keywords: ['funny', 'cat'] },
@@ -10,18 +10,19 @@ var gImgs = [
     { id: 7, url: 'meme-imgs/7.jpg', keywords: ['funny', 'baby'] },
     { id: 8, url: 'meme-imgs/8.jpg', keywords: ['funny', 'man'] },
     { id: 9, url: 'meme-imgs/9.jpg', keywords: ['funny', 'baby'] },
-    { id: 10, url: 'meme-imgs/10.jpg', keywords: ['funny', 'obama'] },
+    { id: 10, url: 'meme-imgs/10.jpg', keywords: ['funny', 'obama', 'politics'] },
     { id: 11, url: 'meme-imgs/11.jpg', keywords: ['funny'] },
     { id: 12, url: 'meme-imgs/12.jpg', keywords: ['funny'] },
     { id: 13, url: 'meme-imgs/13.jpg', keywords: ['funny'] },
     { id: 14, url: 'meme-imgs/14.jpg', keywords: ['funny'] },
     { id: 15, url: 'meme-imgs/15.jpg', keywords: ['funny'] },
     { id: 16, url: 'meme-imgs/16.jpg', keywords: ['funny'] },
-    { id: 17, url: 'meme-imgs/17.jpg', keywords: ['funny', 'putin'] },
+    { id: 17, url: 'meme-imgs/17.jpg', keywords: ['funny', 'putin', 'politics'] },
     { id: 18, url: 'meme-imgs/18.jpg', keywords: ['funny'] },
 ];
 var gCurrMemeImg = gImgs[0]
 var gFilterBy;
+var gKeywordSearchCountMap = { 'funny': 30, 'baby': 14, 'politics': 17, 'cat': 16, 'dog': 20, 'trump': 30 }
 
 function renderGallery() {
     var imgs = gImgs
@@ -49,4 +50,23 @@ function onSearch(text) {
 
 function hideGallery() {
     document.querySelector('.gallery').style.display = 'none'
+}
+
+function onSuggestionClick(id) {
+    if (gKeywordSearchCountMap[id] === 40) return
+    gFilterBy = id
+    gKeywordSearchCountMap[id]++
+    renderKeyWords()
+    renderGallery()
+}
+
+function renderKeyWords() {
+    const words = document.querySelectorAll('.suggestions li')
+    words.forEach(word => keyWordsSize(word.id))
+}
+
+function keyWordsSize(keyId) {
+    const elSuggestion = document.getElementById(keyId)
+    const currSize = gKeywordSearchCountMap[keyId]
+    elSuggestion.style.fontSize = `${currSize}px`
 }

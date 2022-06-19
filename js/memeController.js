@@ -7,11 +7,20 @@ function init() {
     gCanvas = document.querySelector('#my-canvas');
     gCtx = gCanvas.getContext('2d');
     resizeCanvas()
+    renderKeyWords()
 
     window.addEventListener('resize', () => {
         resizeCanvas()
         renderMeme()
     })
+    gCanvas.addEventListener('mousemove', dragLine)
+    gCanvas.addEventListener('mousedown', down)
+    gCanvas.addEventListener('mouseup', up)
+    gCanvas.addEventListener('mouseout', up)
+
+    gCanvas.addEventListener('touchmove', dragLine)
+    gCanvas.addEventListener('touchstart', down)
+    gCanvas.addEventListener('touchend', up)
 
 }
 
@@ -88,7 +97,12 @@ function showEditor() {
     document.querySelector('.meme-editor').style.display = 'grid'
 }
 
-function onAddSticker(sticker){
+function onAddSticker(sticker) {
     addNewLine(sticker)
+    renderMeme()
+}
+
+function onRandomMeme(){
+    randomMeme()
     renderMeme()
 }

@@ -1,11 +1,16 @@
-/* SMALL */
-@media (max-width: 640px) {
+/* MOBILE */
+@media (max-width: 840px) {
+    header .header-content {
+        padding: 0 15px;
+    }
+
     main .meme-editor {
         grid-template-columns: 1fr;
         grid-template-rows: 50% 50%;
         grid-template-areas: "canvas"
             "control-box";
-        margin: 5px auto;
+        gap: 10px;
+        margin: 10px auto;
     }
 
     .gallery .gallery-content .gallery-imgs {
@@ -15,15 +20,38 @@
 
     main .gallery .search-bar {
         width: 100%;
+        padding: 25px 15px;
     }
 
     .gallery .search-bar input {
         width: 100%;
+        padding: 0 15px;
     }
+
     .meme-editor .control-box .top-grid {
         margin-bottom: 15px;
     }
+
     .meme-editor .control-box .mid-grid {
         margin-bottom: 10px;
+    }
+
+    .main-layout {
+        max-width: 640px;
+    }
+}
+
+
+/* MEDIUM */
+@media (min-width: 840px) {
+    .main-layout {
+        max-width: 800px;
+    }
+}
+
+/* LARGE */
+@media (min-width: 1100px) {
+    .main-layout {
+        max-width: 1060px;
     }
 }
